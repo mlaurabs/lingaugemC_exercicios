@@ -1,0 +1,53 @@
+
+// Finalidade do Programa 2: Comparar uma string com a outra;
+// Aluna: Maria Laura Barbosa Soares
+// Turma: 3BINFO
+
+#include <stdio.h>
+
+// variaveis globais
+char str1[50];
+char str2[50];
+
+int main()
+{
+    int cont=0, cont2=0, cont3=0; //variveis para validação das strings
+    printf("Digite a primeira palavra: \n");
+    scanf("%s", str1); // lê a primeira palavra
+    printf("Digite a segunda palavra: \n");
+    scanf("%s", str2); // lê a segunda palavra
+    
+    for(int i=0; i < 50; i++){ // loop para contabilizar a quantidade de letras tem a palavra 1
+        if(str1[i] != '\0'){
+            cont++;
+        }else{
+            break;
+            }
+    }
+
+     for(int i=0; i < 50; i++){ // loop para contabilizar a quantidade de letras tem a palavra 2
+        if(str2[i] != '\0'){
+            cont2++;
+        }else{
+            break;
+            }
+    }
+    
+    if(cont == cont2){ // verefica se as duas palavras tem o mesmo tamanho(mesma quantidade de letras)
+        for(int i=0; i < cont; i++){ // como possuem o mesmo tamanho, faz-se um loop para camparar letra por letra
+            if(str1[i] == str2[i]){
+                cont3++;
+            }
+        }
+        if(cont3 == cont){ // verefica se todas as letras são iguais
+        printf("As palavras digitadas são iguais");   // palvra com mesmo tamanho + letras iguais = palavras iguais
+        }else{
+            printf("As palavras digitadas não são iguais"); // palvra com mesmo tamanho + letras iguais = palavras diferentes
+        }
+    
+    }else{ // como não possuem a mesma quantidade de letras, não há chances de serem iguais
+        printf("As palavras digitadas não são iguais");
+    }
+    
+}
+

@@ -1,0 +1,43 @@
+/*
+
+Programa 1: Capaz de ler do teclado dois nomes de pessoas e imprimi-los em ordem alfabética.
+
+Aluna: Maria Laura Barbosa Soares
+Turma: 3BINFO
+
+*/
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+    char pes1[100],pes2[100]; // declaraco das strings
+    
+    printf("Digite o nome da pessoa 1:\n");
+    scanf("%s", pes1); // lê o nome da primeira pessoa
+    printf("Digite o nome da pessoa 2:\n");
+    scanf("%s", pes2); // lê o nome da segunda pessoa
+    
+    
+    for(int i=0; i < 100; i++){
+        // um loop é usado para que vá comparando até encontrar letras diferentes
+        // tolower é usado para que estejamos comparando minúscula com minúscula, se comparamos minúscula com maiúscula pode dar um resul errado
+        if(tolower(pes1[i]) < tolower(pes2[i])){
+            printf("\nEm ordem alfabética: %s , %s", pes1, pes2);
+            break; 
+        }else if(tolower(pes2[i]) < tolower(pes1[i])){
+            printf("\nEm ordem alfabética: %s , %s", pes2, pes1);
+            break;
+        }
+        
+    
+        if(pes1[i+1] == '\0' && pes2[i+1] == '\0'){ // verifica se tiverem o mesmo tamnho e estão na última letra sem ter entrado no ifs anteriores
+            printf("\nOs nomes são iguais!"); // logo são nomes iguais
+            break;
+        }
+
+    }
+
+    
+}

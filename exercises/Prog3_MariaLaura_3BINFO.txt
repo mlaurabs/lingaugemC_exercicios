@@ -1,0 +1,33 @@
+
+// Finalidade do Programa 3: Verificar o comprimento de uma determinada string;
+// Aluna: Maria Laura Barbosa Soares
+// Turma: 3BINFO
+
+#include <stdio.h>
+
+// variaveis globais
+char str1[50];
+
+int main()
+{
+    int cont=0;
+    printf("Digite a primeira palavra: \n");
+    scanf("%s", str1); // lê a primeira palavra
+
+    
+    for(int i=0; i < 50; i++){ // loop para contabilizar a quantidade de letras tem a palavra (seu tamanho)
+        if(str1[i] != '\0'){
+            cont++;
+        }else{
+            break;
+            }
+    }
+    
+    printf("A palavra %s tem %d letras", str1, cont);
+    
+}
+
+
+
+
+

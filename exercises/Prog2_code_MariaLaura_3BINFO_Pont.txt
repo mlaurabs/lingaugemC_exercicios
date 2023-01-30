@@ -1,0 +1,30 @@
+/*2. Escreva um programa que contenha duas variáveis tipo char. Compare seus endereços e
+exiba o maior endereço.
+
+Aluna: Maria Laura Barbosa Soares
+Turma: 3BINFO*/
+
+#include <stdio.h>
+#include <stdbool.h>
+#define formatBool(b) ((b) ? "true" : "false")
+
+int main()
+{
+    // declarei as variáveis e ponteiros
+   char x='A', y='B', *p_x, *p_y;
+   
+   // atribuindo aos ponteiros os endereços de memória
+   p_x = &x;
+   p_y = &y;
+   
+   printf("\n");
+   
+   // comparando qual endereço é maior
+    if(p_y > p_x){
+        printf("O maior endereço é do ponteiro p_y (%p)", p_y);
+    }else{
+        printf("O maior endereço é do ponteiro p_x (%p)", p_x);
+    }
+    
+}
+

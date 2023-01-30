@@ -1,0 +1,57 @@
+/*
+
+Programa 4:Faça um programa que leia do teclado uma matriz 3x 3 e rescreva na ordem inversa.
+
+Aluna: Maria Laura Soares
+Turma: 3BINFO
+
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int matriz[3][3];
+    int m[3][3];
+    
+    for(int i=0; i < 3; i++){ // loop para popular a matriz
+        printf("\n");
+        printf("Linha %d\n", i);
+        for(int j=0; j < 3; j++){
+            printf("Coluna %d\n", j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    
+   // variaveis auxiliares
+   int y = 2; 
+   int z = 2;
+    
+    for(int i=0; i < 3; i++){
+        for(int j=0; j < 3; j++){
+            m[i][j] = matriz[y][z];
+            z--; // diminui a coluna 
+        }
+        z = 2;
+        y--; // diminui a linha
+    }
+
+      for(int i=0; i < 3; i++){  // imprimi a matriz resultado
+        printf("\n");
+        for(int j=0; j < 3; j++){
+            if(m[i][j] < 10){
+              if(j == 0){  // verificações para deixar o output alinhado
+                 printf("%d  ", m[i][j]);
+              }else{
+                 printf(" %d  ", m[i][j]);
+              }
+             
+            }else{
+                printf("%d  ", m[i][j]);
+            }
+            
+        }
+    }
+    
+    
+}

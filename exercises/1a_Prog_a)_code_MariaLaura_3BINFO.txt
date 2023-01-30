@@ -1,0 +1,50 @@
+/*Finalidade do programa a): Crie um programa para cadastro rápido de pacientes em uma clínica. O programa deve ler
+o nome, o sexo, a idade. O programa deve perguntar se o paciente apresenta alguma doença crônica ou gravidez e ele 
+deverá ler e s para sim e n para não. O programa deve retornar se o paciente está apto ou não ao atendimento preferencial.
+Se o pacinete tiver 60 anos ou mais, apresentar doença crônica ou gravidez, ele está apto; caso contrário , não.
+O programa deve começar apresentando um menu, onde se pessoa apertar no 1, ele começa o cadastro e se a pessoa
+apertar no 2, ele encerra o programa.
+
+Aluno: Maria Laura Barbosa Soares
+Turma: 3BINFO
+
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int aux=1; // variavel para controlar o loop
+    while(aux == 1){
+        // declaracao das variaveis necessarias
+        int opcao, idade;
+        char nome_paci[30];
+        char sexo[1];
+        char doe_gravidez[1];
+        
+        // menu
+        printf("\nBem-vindo a Clínica das Luzes");
+        printf("\nSe deseja realizar o cadastro de um novo paciente, digite 1");
+        printf("\nSe deseja encerrar o programa, digite 2\n");
+        scanf("%d", &opcao); // lê a opcao selecionada pelo usuario
+        if(opcao == 1){ // se o usurio desejar realizar um cadastro
+            printf("\nNome do paciente: \n");
+            scanf("%s", nome_paci); //lê o nome
+            printf("\nIdade do paciente: \n");
+            scanf("%d", &idade);//lê a idade
+            printf("\nSexo do paciente: Obs.: f para feminino e m para masculino.\n");
+            scanf("%s", sexo);//lê o sexo
+            printf("\nO paciente apresenta alguma doença crônica ou gravidez? Obs.: s para sim e n para não.\n");
+            scanf("%s", doe_gravidez); 
+            if(idade >= 60 || doe_gravidez[0] == 's'){ //verifica se o paciente está dentro de algumas das condição para o atendimento preferencial
+                printf("\nO paciente %s está adepto ao atendimento preferencial\n", nome_paci);
+            }else{
+                printf("\nO paciente %s não está adepto ao atendimento preferencial\n", nome_paci);
+            }
+            
+        }else if(opcao == 2){ // se o usurio escolher encerrar o programa
+            break;
+        }
+    } 
+}
+}

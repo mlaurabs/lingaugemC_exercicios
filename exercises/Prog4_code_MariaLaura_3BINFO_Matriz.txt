@@ -1,0 +1,50 @@
+
+// Finalidade do Programa 4: Realizar operação de soma de duas matrizes quadradas.
+// Aluna: Maria Laura Barbosa Soares
+// Turma: 3BINFO
+
+#include <stdio.h>
+
+
+int main()
+{
+    int n;
+    printf("Qual será a ordem da matriz quadrada? \n"); // lê o número de linhas e colunas da matriz
+    scanf("%d", &n);
+    int matriz1[n][n];
+    int matriz2[n][n];
+    int mresul[n][n];
+     
+    
+    printf("Digite valores para matriz 1 de ordem %d \n", n); // popula a matriz 1
+    for(int i=0; i < n; i++){
+        printf("Linha %d \n", i+1);
+         for(int j=0; j < n; j++){
+            scanf("%d", &matriz1[i][j]); 
+         }
+     }
+   
+    printf("Digite valores para matriz 2 de ordem %d \n", n); // popula a matriz 2
+    for(int i=0; i < n; i++){
+        printf("Linha %d \n", i+1);
+         for(int j=0; j < n; j++){
+            scanf("%d", &matriz2[i][j]); 
+         }
+     }
+
+    for(int i=0; i < n; i++){ // realiza a soma das matrizes
+         for(int j=0; j < n; j++){
+             mresul[i][j] = (matriz1[i][j] + matriz2[i][j]);
+         }
+     }
+     
+   printf("\nA matriz resultado: \n");
+   for(int i=0; i < n; i++){ // imprime a matriz resultado
+         printf("\nLinha %d\n", i+1);
+         for(int j=0; j < n; j++){
+             printf("Coluna %d\n", j+1);
+             printf("%d\n", mresul[i][j]);
+         }
+     }
+}
+

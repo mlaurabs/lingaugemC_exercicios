@@ -1,0 +1,65 @@
+/*
+
+Programa 4: Considerando a entrada via teclado de um número na base decimal converta para a base binária. (Não vale utilizar a máscara no printf).
+
+Aluna: Maria Laura Barbosa Soares
+Turma: 3BINFO
+
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+
+char returnChar(int x){ // funcao que verifica um numero int e retorna seu char correspondente
+    if(x == 0){
+        return '0';
+    }else if(x == 1){
+        return '1';
+    }
+}
+
+
+int
+main ()
+{
+  int n, deci;
+  char binario[100]; // string que receberá o numero em base binária
+
+  printf ("\nEscreva um numero em base decimal: ");
+  scanf("%d", &n); // lê o número
+
+ deci = n; // guarda o numero em base decimal antes das diviões
+ int aux;
+ int i = 0;
+ while(n > 0 ){
+    aux = 0;
+    aux = n%2; // guarda o resto da divisão de n por 2
+    binario[i] = returnChar(aux); // concatena na string binario o resto da divisão em char
+    n = n/2; // divide n
+    i++;
+ }
+ 
+
+int cont = 0;
+
+for(int j = 0; j < 100; j++){ //loop para saber o tamanho numero binario
+    if(binario[j] == '\0'){
+        break;
+    }else{
+        cont++;
+    }
+}
+ 
+
+printf("O numero em base decimal(%d), convertido em base binaria eh: ", deci);
+
+
+for(int y = cont-1; y >=0; y--){ // percorre partindo do fim para printar corretamente o n em base binaria
+    printf("%c", binario[y]);
+    
+ }
+}

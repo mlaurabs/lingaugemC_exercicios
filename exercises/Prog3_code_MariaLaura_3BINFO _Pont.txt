@@ -1,0 +1,40 @@
+/*
+3. Escreva um programa utilizando ponteiros que leia 2 valores inteiros e chame uma função que receba
+estas 2 variáveis "A" e "B" e, 
+troque o seu conteúdo entre elas, ou seja, após a execução da função, "A" conterá o valor de "B e "B" conterá o valor de "A".
+
+Aluna: Maria Laura Barbosa Soares
+Turma: 3BINFO
+
+*/
+
+#include <stdio.h>
+
+
+void trocaValores(int *a, int *b){
+    int aux; // variavel auxiliar
+    aux = *a; // guarda o conteúdo do ponteiro a na variável auxiliar
+    *a = *b;  // atribui o conteúdo do ponteiro b ao conteúdo do ponteiro a
+    *b = aux; // atribui o conteúdo do ponteiro a mantido na variável auxiliar ao conteúdo do ponteiro b
+    
+    return;
+}
+
+
+int main()
+{
+    int A, B;
+    printf("\nDigite um inteiro:\n");
+    scanf("%d", &A ); // lê um valor para A
+    printf("\nDigite outro inteiro:\n");
+    scanf("%d", &B); // lê um valor para B
+    printf("\nValores antes da função:\n");
+    printf("A = %d e B = %d", A,B);
+    trocaValores(&A, &B); // inverte os conteúdos com a função
+    printf("\nValores depois da função:\n");
+    printf("A = %d e B = %d", A,B);
+    
+    
+
+    
+}

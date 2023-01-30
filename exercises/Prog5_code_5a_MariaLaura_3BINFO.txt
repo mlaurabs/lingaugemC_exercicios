@@ -1,0 +1,30 @@
+/*
+Programa 5: Dado um determinado número com entrada via teclado descubra se o número é primo
+
+Aluna: Maria Laura Barbosa Soares
+Turma: 3BINFO
+
+*/
+
+#include <stdio.h>
+
+int main()
+{
+  int num, cont=0;  //variaveis necessárias
+  
+  printf("Digite um número: ");
+  scanf("%d", &num); // lê o número
+  
+  for(int i=1; i < num+1; i++){ // loop que divide o número de entrada de 1 até ele mesmo
+      if(num%i == 0){ // se a divisao do número por i tiver resto 0, incrementa o cont
+          cont++;
+      }
+  }
+  
+  if(cont == 2){ // se o cont for igual 2, o número só foi divisível por 1 e por ele mesmo
+      printf("O número %d é primo", num);
+  }else{
+      printf("O número %d não é primo", num);
+  }
+  
+}

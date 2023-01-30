@@ -1,0 +1,45 @@
+/*
+
+Programa 1: Considerando uma lista de números inteiros desordenada(entrada via teclado). 
+Coloque em ordem decrescente (não vale utilizar função pronta - biblioteca).
+
+Aluna: Maria Laura Barbosa Soares
+TurmA: 3BINFO
+
+
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    // variaveis necessarias
+    int n = 5, aux;
+    int array[n];
+    
+    for(int i=0; i < n; i++){ // poulando a array
+        printf("\nDigite um valor inteiro: ");
+        scanf("%d", &array[i]);
+    }
+    
+     for(int i=0; i < n; i++){
+         for(int j=i+1; j < n; j++){
+             if(array[i] < array[j]){ // verifica se o elemento anterior é menor que seu sucessor, se sim, troca a posição
+                 aux = array[i];
+                 array[i] = array[j];
+                 array[j] = aux;
+                 
+             }
+         }
+     }
+    
+     for(int i=0; i < n; i++){
+         if(i == (n-1)){
+            printf("%d", array[i]);    
+         }else{
+            printf("%d - ", array[i]);    
+         }
+         
+     }
+}
+

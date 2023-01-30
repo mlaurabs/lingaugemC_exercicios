@@ -1,0 +1,33 @@
+// Finalidade do Programa 1: Copiar o conteúdo de uma string na outra contatenando na segunda string;
+// Aluna: Maria Laura Barbosa Soares
+// Turma: 3BINFO
+
+#include <stdio.h>
+
+int main()
+{
+    char str1[50], str2[50]; // declarndo as strs necessárias
+    int j=0, n=0; // variáveis auxiliares
+    printf("Digite uma palavra: \n");
+    scanf("%s", str1); // lê a primeira palavra
+    printf("Digite uma outra palavra: \n");
+    scanf("%s", str2); // lê a segunda plavra
+  
+    
+    for(int i=0; i < 50; i++){ // for para percorrer a primeira palavra (str2)
+        if(str1[i] =='\0'){ // verifica se chegamos na posição sucessora a última letra da str1
+            n = i; // guarda a posição de início para concatenar o resto da str2 em str1
+            str1[i] = str2[j]; // concatena em str1 a primeira letra de str2
+            j++; // variável auxiliar para percorrer o resto de str2
+        }else if(n > i){ // verifica se estamos depois da do '\0'
+            str1[i] = str2[j]; // a cada iteração concatena mais uma letra de str2 em str1
+            j++; // itera o contador de str2
+            
+        }
+         
+        continue;
+    }
+    printf("A primeira plavra + a segunda plavra = %s", str1);
+
+}
+ 

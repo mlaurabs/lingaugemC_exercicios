@@ -1,0 +1,30 @@
+/*Finalidade do programa: o programa deve ler uma palavra, sem nenhum caracter que não seja uma letra, e retornar seu 
+tamanho, quantas vogais e consoantes tem*/
+// Aluna: Maria Laura Barbosa Soares
+// Turma: 3BINFO
+
+#include <stdio.h>
+
+char palavra[100]; // variavel global para guardar a string 
+int main (){    
+	int cont=0,vogal=0,consoante=0, i=0; // declaração de variáveis necessárias para análise da palavra
+	printf ("Digite uma string: ");
+	gets(palavra); // lê a palavra
+	
+	do{
+	    if(palavra[i] != '\0'){ // procura as posições que não estão vazias para calcular o tamanho da palavra
+			cont++;
+			if(palavra[i] == 'a' || palavra[i] == 'e' || palavra[i] == 'i' || palavra[i] == 'o' || palavra[i] == 'u' ){ // verfica se o caracter da posição é uma vogal
+			vogal++;
+			}else{
+				consoante++; // se não for vogal, é consoante
+			}
+		}
+		i++;
+	}while(i < 100);
+
+	// imprime os resultados na tela
+	printf("\nA palavra %s que tem %d letras",palavra,cont);
+	printf("\nA palavra %s tem %d vogais",palavra,vogal); 
+	printf("\nA palasvra %s tem %d consoantes",palavra,consoante);
+	}

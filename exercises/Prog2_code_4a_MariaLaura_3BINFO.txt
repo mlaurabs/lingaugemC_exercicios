@@ -1,0 +1,48 @@
+/*
+
+Programa 2: Faça uma função que retorne a posição de um dado caractere dentro de uma string.
+
+Aluna: Maria Laura Barbosa Soares
+Turma: 3BINFO
+
+*/
+
+#include <stdio.h>
+
+char str[50];
+char c;
+
+int indexStr(){
+    printf("Digite uma palavra: ");
+    scanf("%s", str); // lê a string
+    printf("Digite uma letra: ");
+    getc(stdin); // útil para leitura do char
+    scanf("%c", &c); // lê o char
+    
+    for(int i = 0; i < 50; i++){
+        if(str[i] == c){ // verifica se a letra da posição é igual o char dado
+            return i;
+        }
+        if(str[i+1] == '\0'){ // caso a palavra esteja na última letra e o char não aparece nela
+            return -1;
+        }
+    }
+    
+}
+
+int main()
+{
+
+  int aux;
+  
+  aux = indexStr();
+  
+  if(aux >= 0){
+    printf("A letra %c está na posicao %d", c, aux); 
+
+  }else if(aux == -1){
+          printf("A letra %c não está na palavra %s", c, str); 
+          
+  }
+ 
+}

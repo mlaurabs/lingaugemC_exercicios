@@ -1,0 +1,89 @@
+/*
+
+Programa 2: Considerando a entrada via teclado de um numero na base hexadecimal converta para a base decimal. (NAO vale utilizar a mascara no printf).
+Aluna: Maria Laura Barbosa Soares
+TurmA: 3BINFO
+
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+int returnInt(char c){ // funcao que verifica um char passado e retorna seu valor int
+    if(c == '0'){
+        return 0;
+    }
+    if(c == '1'){
+        return 1;
+    }else if(c == '2'){
+        return 2;
+    }else if(c == '3'){
+        return 3;
+    }else if(c == '4'){
+        return 4;
+    }else if(c == '5'){
+        return 5;
+    }else if(c == '6'){
+        return 6;
+    }else if(c == '7'){
+        return 7;
+    }else if(c == '8'){
+        return 8;
+    }else if(c == '2'){
+        return 9;
+    }else if(c == 'A'){
+        return 10;
+    }else if(c == 'B'){
+        return 11;
+    }else if(c == 'C'){
+        return 12;
+    }else if(c == 'D'){
+        return 13;
+    }else if(c == 'E'){
+        return 14;
+    }else if(c == 'F'){
+        return 15;
+    }
+}
+
+
+
+int
+main ()
+{
+  char n[16]; // string que irá receber o numero hexadecimal
+
+  printf ("\nEscreva um numero em base haxadecimal: ");
+  scanf("%s", n);
+  
+  int soma=0; 
+  int aux =0;
+  int cont = 0; 
+  
+  for(int i = 0; i < 50; i++){  // loop para saber quantos chareteres estão sendo usado em n
+      if(n[i] == '\0'){
+          break;
+      }else{
+          cont++;
+      }
+  }
+  
+  
+  int pos = 0; 
+  int j = cont-1; // o numero será percorrido a partir da última posição
+  
+  while(j >= 0){ // loop para percorrer cada posição de n
+    aux = returnInt(n[j]); // guarda em aux o int de um char de n
+    soma += aux*(pow(16, pos)); // multiplica o número da posição por 16 elevado a poisção
+    
+    pos++; 
+    j--;
+  }
+  
+  printf("O numero em base hexadecimal(%s), convertido para base decimal é: %d", n,soma);
+  
+
+}

@@ -1,0 +1,48 @@
+/*1. Escreva um programa que declare um inteiro, um tipo float, um char, um bool. 
+Ponteiros para inteiro, float, char e bool. Associe as variáveis aos ponteiros (use &). 
+Modifique os valores de cada variável usando os ponteiros. 
+Imprima os valores das variáveis antes e após  a modificação.
+
+Aluna: Maria Laura Barbosa Soares
+Turma: 3BINFO*/
+
+#include <stdio.h>
+#include <stdbool.h>
+#define formatBool(b) ((b) ? "true" : "false")
+
+int main()
+{
+    // criando os ponteiros e variáveis
+   int a=5, *p_a;
+   float b=3.5, *p_b;
+   bool c=true, *p_c;
+   char d='L', *p_d;
+   
+    printf("\nVariáveis antes:");
+    printf("\n%d", a);
+    printf("\n%f", b);
+    printf("\n%s", formatBool(c)); // imprindo valor boleano
+    printf("\n%c", d);
+    
+    printf("\n");
+    
+    // atribuindo aos ponteiros os endereços de suas respectivas variáveis
+   p_a = &a;
+   p_b = &b;
+   p_c = &c;
+   p_d = &d;
+   
+   // alterando o conteúdo de cada ponteiro
+   *p_a = 160;
+   *p_b = 10.5;
+   *p_c = false;
+   *p_d = 'M';
+   
+   // imprindo as variáveis, mas agora com valores diferentes dos inciais
+    printf("\nVariáveis depois:");
+    printf("\n%d", a);
+    printf("\n%f", b);
+    printf("\n%s", formatBool(c));
+    printf("\n%c", d);
+    
+}

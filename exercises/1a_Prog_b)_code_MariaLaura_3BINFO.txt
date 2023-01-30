@@ -1,0 +1,47 @@
+/*
+Finalidade do programa b): Crie um programa para um jogo da sorte, onde cada número representa uma mensagem da sorte. O programa deve ler o número e printar
+a mensagem correspondente. 
+
+Aluno: Maria Laura Barbosa Soares
+Turma: 3BINFO
+
+*/
+
+#include <stdio.h>
+
+int main()
+{   // variaveis necessarias
+    char nome[30];
+    int num;
+    int aux=1; // variavel para controle do while
+    char opcao[1];
+  while(aux == 1){
+      printf("\nBem-vindo ao jogo da sorte!");
+      printf("\nQual o seu nome?\n");
+      scanf("%s", nome); // lê o nome do jogador
+      printf("\nEscolha seu número da sorte. Ele deve estar entre 1 a 5\n");
+      scanf("%d", &num); // lê o número da sorte
+      switch(num){  // verifica a mensagem correspondente ao numero digitado
+          case 1:
+            printf("\n%s, você conquistará o que mais almeja até o fim deste ano.\n", nome);
+            break;
+          case 2:
+            printf("\n%s, você encontrará o amor de sua vida nos próximos dias.\n", nome);
+            break;
+          case 3:
+            printf("\n%s, você está mais próximo de sua felicidade do que imagina.\n", nome);
+            break;
+          case 4:
+            printf("\n%s, você é capaz de tudo o que quiser. Seus sonhos estão bem próximo de serem realizados.\n", nome);
+            break;
+          case 5:
+            printf("\n%s, você reencontrará uma pessoa muito importante do seu passado.\n", nome);
+            break;
+      }
+      printf("\nDeseja jogar de novo? Obs.: s para sim e n para não\n"); 
+      scanf("%s", opcao);
+      if(opcao[0] == 'n'){ 
+          aux = 0; // se a pessoa não quiser mais jogar, muda o valor de aux para encerrar o loop
+      }
+  }
+}

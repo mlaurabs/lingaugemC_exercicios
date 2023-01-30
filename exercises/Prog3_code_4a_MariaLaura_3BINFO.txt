@@ -1,0 +1,60 @@
+/*
+
+Programa 3: Crie um programa que faça multiplicação de número inteiro 
+de uma matriz 3 x 3 , mas a entrada de dados deve ser via teclado.
+
+Aluna: Maria Laura Soares
+Turma: 3BINFO
+
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int matriz[3][3];
+    int n; 
+    int m[3][3];
+    
+    for(int i=0; i < 3; i++){ // loop para popular a matriz
+        printf("\n");
+        printf("Linha %d\n", i);
+        for(int j=0; j < 3; j++){
+            printf("Coluna %d\n", j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    
+    printf("\n");
+    printf("Digite um valor inteiro para multiplicar a matriz: ");
+    scanf("%d", &n);
+    
+    for(int i=0; i < 3; i++){
+        for(int j=0; j < 3; j++){
+            m[i][j] = matriz[i][j]*n; // multiplica da elemento por n
+        }
+    }
+    
+    for(int i=0; i < 3; i++){  // imprimi a matriz resultado
+        printf("\n");
+        if(i == 0){
+            printf("A matriz multiplicada por %d:\n", n);
+
+        }
+        for(int j=0; j < 3; j++){
+            if(m[i][j] < 10){
+              if(j == 0){  // verificações para deixar o output alinhado
+                 printf("%d  ", m[i][j]);
+              }else{
+                 printf(" %d  ", m[i][j]);
+              }
+             
+            }else{
+                printf("%d  ", m[i][j]);
+            }
+            
+        }
+    }
+    
+    
+}
