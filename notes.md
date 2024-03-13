@@ -15,4 +15,11 @@ printf("Para printar uma variavel basta usar plaholder: %s, %d, %f, %c", nome_da
 scanf("tipo lido: %s, %d, %f, %c", &nome_da_variavel, &nome_da_variavel, &nome_da_variavel, &nome_da_variavel)
 gets()
 ```
+### Operadores
+```c
+// ? --> então
+// nota = ((p1 > p2 ? p1:p2) + p3)/3; --> p1 é maior de p2 então ...
+```
+
+
  
