@@ -25,4 +25,6 @@ gets()
 ```
 
 
- 
+ Questão 1: As principais fontes do Cristianismo antigo consistem nos envangelhos e em outros textos dos primeiros cristãos. Além do Novo e Antigo testamentos, a Didaqué é importantíssima para a fundamentação do cristianismo. A relevância dessas fontes para o Cristianismo antigo nos auxiliam a compreender a história, a teologia, a ética e as práticas da igreja, inicia. Por meio desses textos, podemos reconstruir a evolução do pensamento cristão e as experiências vividas pelos primeiros seguidores de Jesus.
+
+Questão 2: Pedro exerce um papel de grande importância no Cristianismo antigo, sendo apresentado como o primeiro testemunho da ressurreição e como porta-voz do grupo dos doze apóstolos. Ele é mencionado em primeiro lugar nas listas dos doze apóstolos nos Evangelhos de Mateus, Marcos e Lucas, bem como nos Atos dos Apóstolos. 
