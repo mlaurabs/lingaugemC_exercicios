@@ -14,6 +14,7 @@
 printf("Para printar uma variavel basta usar plaholder: %s, %d, %f, %c", nome_da_variavel, nome_da_variavel, nome_da_variavel, nome_da_variavel) // output
 scanf("tipo lido: %s, %d, %f, %c", &nome_da_variavel, &nome_da_variavel, &nome_da_variavel, &nome_da_variavel)
 gets()
+//fabs(num) --> valor absoluto
 ```
 ### Operadores
 ```c
