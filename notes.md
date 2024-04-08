@@ -22,6 +22,7 @@ gets()
 ```c
 // ? --> então
 // nota = ((p1 > p2 ? p1:p2) + p3)/3; --> p1 é maior de p2 então ...
+// CONTINUAR
 ```
 ### Ponteiros
 - armazena valores de endereços de memória
