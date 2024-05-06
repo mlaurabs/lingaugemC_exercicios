@@ -54,7 +54,7 @@ int main(void){
     return 0
 }
 ```
-## Vetor
+### Vetor
 - ***O tamnho do vetor é imutável***
 - Guarda apenas ***um tipo de dado***
 - Exemplo: "int vetor[10] --> vetor de ints com 10 itens"
@@ -102,5 +102,6 @@ para a ponteiro função p
     return 0;
 }
 ```
-
+### Leitura de dados
+- 
   
