@@ -102,6 +102,6 @@ para a ponteiro função p
     return 0;
 }
 ```
-### Leitura de dados
+### Casting em C
 - 
   
