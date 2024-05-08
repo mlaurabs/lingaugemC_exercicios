@@ -102,6 +102,15 @@ para a ponteiro função p
     return 0;
 }
 ```
+### Leitura de Arquivos
+%c -->
+%s --> pula espaços brancos
+%[aA] --> define os caracteres que devem ser lidos
+se _ antes de _%d
+"_%[^\n]" --> lê uma sequeência até encontra o \n (não lê o \n)
+%d - %f - %s --> já pulam espaços brancos antes dos números
+
+
 ### Casting em C
 - 
   
