@@ -109,6 +109,7 @@ para a ponteiro função p
 se _ antes de _%d
 "_%[^\n]" --> lê uma sequeência até encontra o \n (não lê o \n)
 %d - %f - %s --> já pulam espaços brancos antes dos números
+" %" --> espaço em branco antes do %, pula espaços em branco
 
 
 ### Casting em C
