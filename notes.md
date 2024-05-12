@@ -102,6 +102,29 @@ para a ponteiro função p
     return 0;
 }
 ```
+*s --> char * --> stirng
+
+### Alocação Dinâmica
+- alocação estática:
+  - requisita espaço em memória em tempo de compilação
+  - Ex: "in vetor[10]"
+- alocaçã dinâmica:
+  - requisita espaço em memória em tempo de execução
+  - tratamento de erro: exit()
+    - aborta o programa
+  - função malloc()
+    - reserva em memória uma array de bytes
+    - retorna um ponteiro genérico --> void*
+    - retorna NULL, caso haja algum erro. Ex.: não há memória sufuciente no sistema
+```c
+#define TAM 10
+//alocando vetor para 10 inteiros dinamicamente
+int* v = (int*) malloc(TAM*sizeof(int)) //sizeof() --> retona o tamnho em bytes de um tipo de dado
+// desta forma, o ponteiro v aponta para a memória alocada para um vetor de 10 inteiros
+// é apenas um ponteiro para um vetor qualquer
+// a memória alocada permanece reservada até uma liberação explícita ou até o programa terminar-
+```
+
 ### Leitura de Arquivos
 %c -->
 %s --> pula espaços brancos
