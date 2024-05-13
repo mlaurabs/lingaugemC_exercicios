@@ -138,6 +138,17 @@ se _ antes de _%d
 %d - %f - %s --> já pulam espaços brancos antes dos números
 " %" --> espaço em branco antes do %, pula espaços em branco
 
+- Abrir arquivo:
+  - FILE* f = fopen("path", "rt / wt / rb / wb")
+
+- Arquivos text:
+  - leitura --> "rt"
+  - escrita --> "wt"
+  - ler arquivo --> fscanf("formato de leitura", varavies que receberão os valores lidos)
+
+- Arquivo binário
+  - leitura --> "rb"
+  - - escrita --> "wb"
 
 ### Casting em C
 - 
