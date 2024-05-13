@@ -110,12 +110,16 @@ para a ponteiro função p
   - Ex: "in vetor[10]"
 - alocaçã dinâmica:
   - requisita espaço em memória em tempo de execução
+  - biblioteca: <stdib.h>
   - tratamento de erro: exit()
     - aborta o programa
   - função malloc()
     - reserva em memória uma array de bytes
     - retorna um ponteiro genérico --> void*
     - retorna NULL, caso haja algum erro. Ex.: não há memória sufuciente no sistema
+- função free()
+    - recebe como parâmetro um ponteiro que aponta para uma memória alocada
+    - a função free() libera o espaço em memória
 ```c
 #define TAM 10
 //alocando vetor para 10 inteiros dinamicamente
