@@ -165,6 +165,7 @@ se _ antes de _%d
   - Método de leitura:
     - **fread(ponteiro q aponta para o que vai ser escrito, tamanho em bytes de cada item a ser escrito, número de itens a serem escritos, ponteiro do arquivo)**
       - Ex.: int y; fread(&y, sizeof(int), 1, f);
+      - retorna o número de arquivos lidos
 
 ### Casting em C
 - 
