@@ -139,16 +139,32 @@ se _ antes de _%d
 " %" --> espaço em branco antes do %, pula espaços em branco
 
 - Abrir arquivo:
-  - FILE* f = fopen("path", "rt / wt / rb / wb")
+  - **FILE* f = fopen("path", "rt / wt / rb / wb")**
+
+- Fechar arquivos:
+    - **flcose(ponteiro do arquivo)**
 
 - Arquivos text:
   - leitura --> "rt"
   - escrita --> "wt"
-  - ler arquivo --> fscanf("formato de leitura", varavies que receberão os valores lidos)
+  - Métodos de leitura:
+    - **fscanf(ponteiro do arquivo, formato de leitura, endereço da variável(s) ou variaveis que vão receber o conteúdo lido)**
+      - este método retorna o número de parâmetros lidos
+      - getc() e fgetc() lidam com a leitura de caracteres (Ex.: char c = getc(ponteiro do arquivo))
+  - Método de escrita:
+    - **fprintf(ponteiro do arquivo, formato de leitura, variável(s) ou variaveis)**
+
+***OBS.: FEOF(ponteiro do arquivo) --> retorna True quando encontra o "end of file"/EOF***
 
 - Arquivo binário
   - leitura --> "rb"
-  - - escrita --> "wb"
+  - escrita --> "wb"
+  - Método de escrita:
+     - **fwrite(ponteiro q aponta para o que vai ser escrito, tamanho em bytes de cada item a ser escrito, número de itens a serem escritos, ponteiro do arquivo)**
+       - Ex.: int x; fwrite(&x, sizeof(int), 1, f) / int vetor[3] = {10, 20, 30}; fwrite(vetor, sizeof(int), 3);
+  - Método de leitura:
+    - **fread(ponteiro q aponta para o que vai ser escrito, tamanho em bytes de cada item a ser escrito, número de itens a serem escritos, ponteiro do arquivo)**
+      - Ex.: int y; fread(&y, sizeof(int), 1, f);
 
 ### Casting em C
 - 
