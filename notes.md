@@ -139,7 +139,7 @@ se _ antes de _%d
 " %" --> espaço em branco antes do %, pula espaços em branco
 
 - Abrir arquivo:
-  - **FILE* f = fopen("path", "rt / wt / rb / wb")**
+  - ***FILE* f = fopen("path", "rt / wt / rb / wb")***
 
 - Fechar arquivos:
     - **flcose(ponteiro do arquivo)**
@@ -166,6 +166,10 @@ se _ antes de _%d
     - **fread(ponteiro q aponta para o que vai ser escrito, tamanho em bytes de cada item a ser escrito, número de itens a serem escritos, ponteiro do arquivo)**
       - Ex.: int y; fread(&y, sizeof(int), 1, f);
       - retorna o número de arquivos lidos
+  - Deslocamento do cursor do arquivo:
+      - SEEK_SET: a partir do início do arquivo
+      - SEEK_CUR: a partir da posiçãao corrente do cursor
+      - SEEK_END: a partir do final do arquivo (offset negativo)
 
 ### Casting em C
 - 
