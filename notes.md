@@ -171,6 +171,46 @@ se _ antes de _%d
       - SEEK_CUR: a partir da posiçãao corrente do cursor
       - SEEK_END: a partir do final do arquivo (offset negativo)
 
-### Casting em C
-- 
-  
+### Tipos Estruturados
+- é como se fosse uma "classe"
+- Definindo uma estrutura:
+  - struct ponto{
+        float x;
+        float y;
+    }
+```c
+struct ponto{
+        float x;
+        float y;
+}
+
+void imprime(struct ponto p){ // desta forma, todo conteúdo de ponto (x e y) é copidado para a função
+    printf("%.2f e %.2f", p.x, p.y);
+}
+
+int main(void){
+    struct ponto p;
+
+    printf("Digite as coordenadas do ponto (x y): ");
+    scanf("%f %f", &p.x, &p.y);
+    imprime(p);
+    return 0;
+
+}
+
+```
+- Usando alocação dinâmica:
+  - Reservando espaço em memória para um tipo estruturado:
+```c
+struct ponto* p;
+p = (struct ponto*) malloc(sizeof(struct ponto)); // alocando dinamicamente um espaço em memoria para o tipo ponto
+p -> x = 12.0f; // incializando a variável do tipo ponto 
+```
+- **typedef** --> atribui nomes diferentes para determinados tipos
+  - Ex.:
+```c
+typedef struct ponto{
+    float x;
+    float y;
+}Ponto // agora o tipo "struct ponto" é referenciado como Ponto
+```
