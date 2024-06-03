@@ -214,3 +214,61 @@ typedef struct ponto{
     float y;
 }Ponto // agora o tipo "struct ponto" é referenciado como Ponto
 ```
+### Lista Encadeada
+- representada utilizando struct para representar o nó da lista
+
+- O que é um nó?
+    - o nó representa um elemento da lista encadeada
+    - o nó é composto de duas partes: o dado e a referência para o próximo nó
+    - quando um nó aponta para NULL, está no último nó/elemento da lista
+    - O enderec¸o de uma lista encadeada e o enderec¸o de sua ´
+        primeira celula. 
+
+![Sem título](https://github.com/mlaurabs/lingaugemC_exercicios/assets/89169599/47a76b56-0024-4ed2-85bb-eef7ecdd5456)
+
+Ex.:
+```c
+#define _CRT_SECURE_NO_DEPRECATE
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct nod Nod;
+struct nod {
+	int dado;
+	Nod* prox;
+};
+
+
+Nod* inicia(void) {
+	Nod* p = (Nod*)malloc(sizeof(Nod));
+	p->dado = 3;
+	p->prox = NULL;
+	return p;
+}
+
+Nod* insere(Nod* lista, int value) {
+	Nod* p = (Nod*)malloc(sizeof(Nod));
+	p->dado = value;
+	p->prox = lista;
+	return p;
+}
+
+void imprime(Nod* lista) {
+	for (Nod* p = lista; p->prox != NULL; p = p->prox) {
+		printf("\n%d", lista->dado);
+	}
+}
+
+int main(void) {
+
+	Nod* teste = inicia_lista();
+	Nod* new = insere(teste, 8);
+	imprime(teste);
+	printf("\n\n");
+	imprime(new);
+	
+	return 0;
+}
+
+
+```
