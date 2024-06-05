@@ -221,7 +221,7 @@ typedef struct ponto{
     - o nó representa um elemento da lista encadeada
     - o nó é composto de duas partes: o dado e a referência para o próximo nó
     - quando um nó aponta para NULL, está no último nó/elemento da lista
-    - O enderec¸o de uma lista encadeada e o enderec¸o de sua ´
+    - O endereço de uma lista encadeada e o endereço de sua
         primeira celula. 
 
 ![Sem título](https://github.com/mlaurabs/lingaugemC_exercicios/assets/89169599/47a76b56-0024-4ed2-85bb-eef7ecdd5456)
@@ -240,13 +240,10 @@ struct nod {
 
 
 Nod* inicia(void) {
-	Nod* p = (Nod*)malloc(sizeof(Nod));
-	p->dado = 3;
-	p->prox = NULL;
-	return p;
+	return NULL;
 }
 
-Nod* insere(Nod* lista, int value) {
+Nod* insere(Nod* lista, int value) { // insere no início da lista
 	Nod* p = (Nod*)malloc(sizeof(Nod));
 	p->dado = value;
 	p->prox = lista;
@@ -254,21 +251,89 @@ Nod* insere(Nod* lista, int value) {
 }
 
 void imprime(Nod* lista) {
-	for (Nod* p = lista; p->prox != NULL; p = p->prox) {
+	for (Nod* p = lista; p != NULL; p = p->prox) {
 		printf("\n%d", lista->dado);
+	}
+}
+
+// dúvidas??
+// a lista, ex.: l, sempre começa apontando pra cabeça?? é a mesma ideia de strings?
+// 
+
+
+void imprimeRev(Nod* lista) {
+	if (lista != NULL) {
+		Nod* fim = inicia();
+		while (fim != lista) {
+			Nod* p = lista;
+			while (p->prox != fim) {
+				p = p->prox;
+			}
+			printf("%d\n", p->dado);
+			fim = p;
+		}
+
+	}
+}
+
+Nod* lremove(Nod* l, int x) {
+	if(l == NULL) {
+		return l;
+	}else if(l->dado != x){
+		l->prox = lremove(l->prox, x);
+	}
+	else {
+		Nod* t = l->prox;
+		free(l);
+		return t;
+	}
+	return l;
+}
+
+/*
+Nod* lremove(Nod* l, int x){
+	    
+}
+
+*/
+
+/*
+void imprime_rev_recursao(NoLista* fazuL){
+	if (fazuL == NULL){
+	return;
+	}
+	imprime_rev_recursao(fazuL->prox);
+	printf("%d\n", fazuL->info);
+}
+*/
+
+Nod* insereOrd(Nod* l, int x){
+	if (l == NULL || l->dado > x) {
+		Nod* p = (Nod*)malloc(sizeof(Nod));
+		if (p == NULL) {
+			printf("Erro\n");
+			exit(0);
+		}
+		p->dado = x;
+		p->prox = l;
+		return p;
+	}
+	else {
+		l->prox = insereOrd(l->prox, x);
+		return l;
 	}
 }
 
 int main(void) {
 
-	Nod* teste = inicia_lista();
-	Nod* new = insere(teste, 8);
-	imprime(teste);
-	printf("\n\n");
+	Nod* new = inicia();
+	new = insere(new, 8);
+	new = insere(new, 20);
 	imprime(new);
+	printf("\n\n");
+	imprimeRev(new);
 	
+
 	return 0;
 }
-
-
 ```
