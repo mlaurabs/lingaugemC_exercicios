@@ -336,4 +336,99 @@ int main(void) {
 
 	return 0;
 }
+
+
+// Aula 10/06/2024
+
+#define _CRT_SECURE_NO_DEPRECATE
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct nod Nod;
+struct nod {
+	int dado;
+	Nod* prox;
+};
+
+int igual(Nod* l1, Nod* l2) {
+	Nod* p1 = l1;
+	Nod* p2 = l2;
+
+	while (p1 != NULL && p2 != NULL) {
+		if (p1->dado != p2->dado) {
+			return 0;
+		}
+		p1 = p1->dado;
+		p2 = p2->prox;
+
+	}
+	return p1 == p2;
+}
+
+Nod* insere(Nod* lista, int value) {
+	Nod* p = (Nod*)malloc(sizeof(Nod));
+	if (p == NULL) {
+		// Gerenciar falha de alocação de memória aqui, como retornar a lista original
+		// ou abortar o programa.
+		// Exemplo de retorno da lista original:
+		return lista;
+	}
+	p->dado = value;
+	p->prox = lista;
+	return p;
+}
+
+
+void copia(Nod* lista) {
+	Nod* p = (Nod*)malloc(sizeof(Nod));
+	
+	Nod* ini = NULL;
+	Nod* fim = NULL;
+
+	for (Nod* p = lista; lista != NULL; p = p->prox) {
+		Nod* q = (Nod*)malloc(sizeof(Nod));
+		q->dado = p->dado;
+		q->dado = NULL;
+		if (ini == NULL) {
+			ini = q;
+			fim = q;
+		}
+		else {
+			fim->prox = q;
+		}
+		fim = q;
+	}
+	return ini;
+	
+}
+
+Nod* copia(Nod* lista) {
+	if (lista = NULL) {
+		return NULL;
+	}
+	else {
+		Nod* p = (Nod*)malloc(sizeof(Nod));
+		p->dado = lista->dado;
+		p->prox = copia(lista->prox);
+		return p;
+	}
+}
+
+void imprime(Nod* lista) {
+	for (Nod* p = lista; p != NULL; p = p->prox) {
+		printf("%d\n", p->dado);
+	}
+}
+
+int main(void) {
+
+	Nod* teste = NULL;
+	int v = 6;
+	teste = insere(teste, v);
+	teste = insere(teste, 10);
+	imprime(teste);
+	copia(teste);
+
+	return  0;
+}
 ```
