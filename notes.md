@@ -449,3 +449,13 @@ int main(void) {
   - A linguagem compilada pré-processa o código já gerando um excutável e depois disso o resultado é visto. Enquanto a lingaugem intrepretada, tudo é feito em tempo de execução, onde o interpretador interpreta linha po linha
   - As linguagens compiladas são convertidas diretamente em um código de máquina para que então o processador possa executá-lo. Como resultado, elas tendem a ser mais rápidas e mais eficientes em sua execução do que as linguagens interpretadas.
   - A implementação de uma linguegam interpretada executa instruções diretamente sem anteriormente compilar o programa para código de máquina.
+
+- Uso de macro
+```c
+#define MAX(a,b) ((a)>(b) ? (a) : (b)) //  se a maior que b então a senão b
+// : é um operador ternário
+// utlizando macro reduz os eforços utilizados em uma função a qual requer uma chmada e um retorno
+// o uso do operador ternário configura uma expressão, sendo menos esforço do que o uso do comando if
+```
+- Qual a vantagem de utilizar marcros ao invés comandos?
+  - macros são expressões enquanto comandos precisam alocar o resultado em memória para manipulá-lo
