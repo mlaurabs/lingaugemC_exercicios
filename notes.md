@@ -432,3 +432,20 @@ int main(void) {
 	return  0;
 }
 ```
+
+
+### Estrutura de dados
+- Diretivas de compilação:
+  - o compilador de c gera código pra qualquer máquina/arquitetura
+  - o compilador c gera código assembly / todo sistema operacional tem assembly tornando c um compilador universal
+  - o assembler é originado do servidor do hardware (o assenbler é fora do compilador) -- assembler--> montador
+  - o assembler gera o código objeto
+  - o código objeto é diferente para cada sistema operacional
+  - o fornecedor do assembler gera o ligador (linker)
+  - o ligador trabalha com o código objeto gerado pelo assembler
+ 
+- Linguagem Interpretada VS Linguagem compilada
+  - Em uma linguagem interpretada, o código fonte não é traduzido diretamente pela máquina de destino. Em vez disso, um programa diferente, o interpretador, lê e executa o código.
+  - A linguagem compilada pré-processa o código já gerando um excutável e depois disso o resultado é visto. Enquanto a lingaugem intrepretada, tudo é feito em tempo de execução, onde o interpretador interpreta linha po linha
+  - As linguagens compiladas são convertidas diretamente em um código de máquina para que então o processador possa executá-lo. Como resultado, elas tendem a ser mais rápidas e mais eficientes em sua execução do que as linguagens interpretadas.
+  - A implementação de uma linguegam interpretada executa instruções diretamente sem anteriormente compilar o programa para código de máquina.
